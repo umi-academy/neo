@@ -493,7 +493,7 @@ namespace neopixel {
 
     /**
      * Create a new NeoPixel driver for `numleds` LEDs.
-     * @param pin the pin where the neopixel is connected.
+     * @param pin the pin where the neopixel is connected, eg: P16
      * @param numleds number of leds in the strip, eg: 8
      */
     //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
@@ -503,7 +503,7 @@ namespace neopixel {
     //% blockSetVariable=strip
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
-        numleds = 7;
+        numleds = 8;
         let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
         strip.buf = pins.createBuffer(numleds * stride);
