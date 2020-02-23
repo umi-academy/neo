@@ -514,8 +514,8 @@ namespace UMI_RGB {
     //% trackArgs=0,2
     //% blockSetVariable=RGB_LED
     export function RGBcreate(): Strip {
-        strip = create(DigitalPin.P16, 8, 0);
-        return strip;
+        RGB_LED = create(DigitalPin.P16, 8, 0);
+        return RGB_LED;
     }
 
     /**
