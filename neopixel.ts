@@ -501,16 +501,16 @@ namespace UMI_RGB {
         pin = DigitalPin.P16;
         numleds = 8;
         mode = 0;
-        let strip = new Strip();
+        let RGB_LED = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
-        strip.buf = pins.createBuffer(numleds * stride);
-        strip.start = 0;
-        strip._length = numleds;
-        strip._mode = mode;
-        strip._matrixWidth = 0;
-        strip.setBrightness(255)
-        strip.setPin(pin)
-        return strip;
+        RGB_LED.buf = pins.createBuffer(numleds * stride);
+        RGB_LED.start = 0;
+        RGB_LED._length = numleds;
+        RGB_LED._mode = mode;
+        RGB_LED._matrixWidth = 0;
+        RGB_LED.setBrightness(255)
+        RGB_LED.setPin(pin)
+        return RGB_LED;
     }
 
     /**
