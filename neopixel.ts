@@ -492,24 +492,32 @@ namespace UMI_RGB {
         }
     }
 
+    function create(pin: number, numleds: number, mode: number): Strip {
+        pin = DigitalPin.P16;
+        numleds = 8;
+        mode = 0;
+        let strip = new Strip();
+        let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
+        strip.buf = pins.createBuffer(numleds * stride);
+        strip.start = 0;
+        strip._length = numleds;
+        strip._mode = mode;
+        strip._matrixWidth = 0;
+        strip.setBrightness(255)
+        strip.setPin(pin)
+        return strip;
+    }
+
     //% blockId="neopixel_create" block="ALL 8 RGB LED"
     //% weight=90 blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=RGB_LED
-    export function RGBcreate(): Strip {
-        pin = DigitalPin.P16;
-        numleds = 8;
-        mode = 0;
-        let RGB_LED = new Strip();
-        let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
-        RGB_LED.buf = pins.createBuffer(numleds * stride);
-        RGB_LED.start = 0;
-        RGB_LED._length = numleds;
-        RGB_LED._mode = mode;
-        RGB_LED._matrixWidth = 0;
-        RGB_LED.setBrightness(255)
-        RGB_LED.setPin(pin)
+    export function RGBcreate(): UMI_RGB.Strip {
+        if (!RGB_LED)
+        {
+            RGB_LED = create(DigitalPin.P16, 8, 0);
+        }
         return RGB_LED;
     }
 
