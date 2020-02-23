@@ -492,17 +492,7 @@ namespace UMI_RGB {
         }
     }
 
-    /**
-     * Create a new NeoPixel driver for `numleds` LEDs.
-     * @param pin the pin where the neopixel is connected, eg: P16
-     * @param numleds number of leds in the strip, eg: 8
-     */
-    //% blockId="neopixel_create" block="NeoPixel at pin %pin|with %numleds|leds as %mode"
-    //% weight=90 blockGap=8
-    //% parts="neopixel"
-    //% trackArgs=0,2
-    //% blockSetVariable=strip
-    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
+    function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
         numleds = 8;
         mode = 0;
@@ -516,6 +506,15 @@ namespace UMI_RGB {
         strip.setBrightness(255)
         strip.setPin(pin)
         return strip;
+    }
+
+    //% blockId="neopixel_create" block="Start RGB LED"
+    //% weight=90 blockGap=8
+    //% parts="neopixel"
+    //% trackArgs=0,2
+    //% blockSetVariable=strip
+    export function RGBcreate(): Strip {
+        create(DigitalPin.P16, 8, 0);
     }
 
     /**
