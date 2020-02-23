@@ -40,7 +40,7 @@ enum NeoPixelMode {
  * Functions to operate NeoPixel strips.
  */
 //% weight=5 color=#2699BF icon="\uf110"
-namespace neopixel {
+namespace UMI_RGB {
 
     //% shim=sendBufferAsm
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
@@ -506,7 +506,7 @@ namespace neopixel {
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
         numleds = 8;
-        let RGB_LED = new Strip();
+        let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
         strip.buf = pins.createBuffer(numleds * stride);
         strip.start = 0;
