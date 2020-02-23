@@ -1,5 +1,5 @@
 {
-    let strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB);
+    let strip = neopixel.create(DigitalPin.P16, 8, NeoPixelMode.RGB);
 
     strip.showRainbow();
     for (let i = 0; i <= strip.length(); i++) { 
