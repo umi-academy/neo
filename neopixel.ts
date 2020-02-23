@@ -42,7 +42,7 @@ enum NeoPixelMode {
 //% weight=5 color=#2699BF icon="\uf110"
 namespace neopixel {
 
-    enum NeoPixelPin {
+    export enum NeoPixelPin {
         //% block="RGB LED"
         RGB = 0,
     }
@@ -199,8 +199,8 @@ namespace neopixel {
         /**
          * Sets the number of pixels in a matrix shaped strip
          * @param width number of pixels in a row
-	 * @param rotation type of matrix
-	 * @param chain type of matrix
+	     * @param rotation type of matrix
+	     * @param chain type of matrix
          */
         //% blockId=neopixel_set_matrix_width block="%strip|set matrix width %width|rotation %rotation|chain %chain"
         //% blockGap=8
