@@ -335,7 +335,7 @@ namespace UMI_RGB {
          * @param length number of LEDs in the range. eg: 4
          */
         //% weight=89
-        //% blockId="neopixel_range" block="%RGB_LED|range from %start|with %length|leds"
+        //% blockId="neopixel_range" block="%create(DigitalPin.P16, 8, 0)|range from %start|with %length|leds"
         //% parts="neopixel"
         //% blockSetVariable=range
         range(start: number, length: number): Strip {
