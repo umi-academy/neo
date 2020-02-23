@@ -272,7 +272,7 @@ namespace neopixel {
          * Turn off all LEDs.
          * You need to call ``show`` to make the changes visible.
          */
-        //% blockId="neopixel_clear" block="%strip|off"
+        //% blockId="neopixel_clear" block="%strip|clear"
         //% weight=76
         //% parts="neopixel"
         clear(): void {
