@@ -492,7 +492,7 @@ namespace UMI_RGB {
         }
     }
 
-    function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
+    function create(pin: number, numleds: number, mode: number): Strip {
         pin = DigitalPin.P16;
         numleds = 8;
         mode = 0;
