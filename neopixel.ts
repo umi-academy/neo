@@ -381,7 +381,7 @@ namespace neopixel {
         }
 
         /**
-         * Set the pin where the neopixel is connected, defaults to P0.
+         * Set the pin where the neopixel is connected, defaults to P16.
          */
         //% weight=10
         //% parts="neopixel" advanced=true
