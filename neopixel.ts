@@ -27,7 +27,7 @@ enum NeoPixelColors {
 /**
  * Different modes for RGB or RGB+W NeoPixel strips
  */
-enum NeoPixelMode {
+enum NeoMode {
     //% block="RGB (GRB format)"
     RGB = 0,
     //% block="RGB+W"
@@ -56,7 +56,7 @@ namespace UMI_RGB {
         brightness: number;
         start: number; // start offset in LED strip
         _length: number; // number of LEDs
-        _mode: NeoPixelMode;
+        _mode: NeoMode;
         _matrixWidth: number; // number of leds in a matrix - if any
         _matrixChain: number; // the connection type of matrix chain
         _matrixRotation: number; // the rotation type of matrix
@@ -253,7 +253,7 @@ namespace UMI_RGB {
         //% weight=80
         //% parts="neopixel" advanced=true
         setPixelWhiteLED(pixeloffset: number, white: number): void {
-            if (this._mode === NeoPixelMode.RGBW) {
+            if (this._mode === NeoMode.RGBW) {
                 this.setPixelW(pixeloffset >> 0, white >> 0);
             }
         }
@@ -277,7 +277,7 @@ namespace UMI_RGB {
         //% weight=76
         //% parts="neopixel"
         clear(): void {
-            const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === NeoMode.RGBW ? 4 : 3;
             this.buf.fill(0, this.start * stride, this._length * stride);
         }
 
@@ -308,7 +308,7 @@ namespace UMI_RGB {
         //% weight=58
         //% parts="neopixel" advanced=true
         easeBrightness(): void {
-            const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === NeoMode.RGBW ? 4 : 3;
             const br = this.brightness;
             const buf = this.buf;
             const end = this.start + this._length;
@@ -362,7 +362,7 @@ namespace UMI_RGB {
         //% parts="neopixel"
         shift(offset: number = 1): void {
             offset = offset >> 0;
-            const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === NeoMode.RGBW ? 4 : 3;
             this.buf.shift(-offset * stride, this.start * stride, this._length * stride)
         }
 
@@ -376,7 +376,7 @@ namespace UMI_RGB {
         //% parts="neopixel"
         rotate(offset: number = 1): void {
             offset = offset >> 0;
-            const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === NeoMode.RGBW ? 4 : 3;
             this.buf.rotate(-offset * stride, this.start * stride, this._length * stride)
         }
 
@@ -397,7 +397,7 @@ namespace UMI_RGB {
         //% weight=9 blockId=neopixel_power block="%strip|power (mA)"
         //% advanced=true
         power(): number {
-            const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === NeoMode.RGBW ? 4 : 3;
             const end = this.start + this._length;
             let p = 0;
             for (let i = this.start; i < end; ++i) {
@@ -411,7 +411,7 @@ namespace UMI_RGB {
         }
 
         private setBufferRGB(offset: number, red: number, green: number, blue: number): void {
-            if (this._mode === NeoPixelMode.RGB_RGB) {
+            if (this._mode === NeoMode.RGB_RGB) {
                 this.buf[offset + 0] = red;
                 this.buf[offset + 1] = green;
             } else {
@@ -433,13 +433,13 @@ namespace UMI_RGB {
                 blue = (blue * br) >> 8;
             }
             const end = this.start + this._length;
-            const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            const stride = this._mode === NeoMode.RGBW ? 4 : 3;
             for (let i = this.start; i < end; ++i) {
                 this.setBufferRGB(i * stride, red, green, blue)
             }
         }
         private setAllW(white: number) {
-            if (this._mode !== NeoPixelMode.RGBW)
+            if (this._mode !== NeoMode.RGBW)
                 return;
 
             let br = this.brightness;
@@ -458,7 +458,7 @@ namespace UMI_RGB {
                 || pixeloffset >= this._length)
                 return;
 
-            let stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
+            let stride = this._mode === NeoMode.RGBW ? 4 : 3;
             pixeloffset = (pixeloffset + this.start) * stride;
 
             let red = unpackR(rgb);
@@ -474,7 +474,7 @@ namespace UMI_RGB {
             this.setBufferRGB(pixeloffset, red, green, blue)
         }
         private setPixelW(pixeloffset: number, white: number): void {
-            if (this._mode !== NeoPixelMode.RGBW)
+            if (this._mode !== NeoMode.RGBW)
                 return;
 
             if (pixeloffset < 0
@@ -497,7 +497,7 @@ namespace UMI_RGB {
         numleds = 8;
         mode = 0;
         let strip = new Strip();
-        let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
+        let stride = mode === NeoMode.RGBW ? 4 : 3;
         strip.buf = pins.createBuffer(numleds * stride);
         strip.start = 0;
         strip._length = numleds;
