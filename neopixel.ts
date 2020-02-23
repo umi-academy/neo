@@ -42,8 +42,6 @@ enum NeoPixelMode {
 //% weight=5 color=#2699BF icon="\uf110"
 namespace UMI_RGB {
 
-    let RGB_LED = RGB_LED = create(DigitalPin.P16, 8, 0);
-
     //% shim=sendBufferAsm
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
     }
@@ -509,6 +507,8 @@ namespace UMI_RGB {
         strip.setPin(pin)
         return strip;
     }
+
+    let RGB_LED: UMI_RGB.Strip;
 
     //% blockId="neopixel_create" block="ALL 8 RGB LED"
     //% weight=90 blockGap=8
