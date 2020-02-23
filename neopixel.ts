@@ -1,7 +1,7 @@
 /**
  * Well known colors for a NeoPixel strip
  */
-enum NeoPixelColors {
+declare enum NeoPixelColors {
     //% block=red
     Red = 0xFF0000,
     //% block=orange
@@ -27,7 +27,7 @@ enum NeoPixelColors {
 /**
  * Different modes for RGB or RGB+W NeoPixel strips
  */
-enum NeoPixelMode {
+declare enum NeoPixelMode {
     //% block="RGB (GRB format)"
     RGB = 0,
     //% block="RGB+W"
@@ -40,7 +40,7 @@ enum NeoPixelMode {
  * Functions to operate NeoPixel strips.
  */
 //% weight=5 color=#2699BF icon="\uf110"
-namespace UMI_RGB {
+declare namespace UMI_RGB {
 
     //% shim=sendBufferAsm
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
