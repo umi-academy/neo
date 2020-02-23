@@ -42,7 +42,7 @@ enum NeoPixelMode {
 //% weight=5 color=#2699BF icon="\uf110"
 namespace neopixel {
     //% shim=sendBufferAsm
-    function sendBuffer(buf: Buffer, pin: DigitalPin.P16) {
+    function sendBuffer(buf: Buffer, pin: DigitalPin) {
     }
 
     /**
@@ -50,7 +50,7 @@ namespace neopixel {
      */
     export class Strip {
         buf: Buffer;
-        pin: DigitalPin.P16;
+        pin: DigitalPin;
         // TODO: encode as bytes instead of 32bit
         brightness: number;
         start: number; // start offset in LED strip
@@ -384,7 +384,7 @@ namespace neopixel {
          */
         //% weight=10
         //% parts="neopixel" advanced=true
-        setPin(pin: DigitalPin.P16): void {
+        setPin(pin: DigitalPin): void {
             this.pin = pin;
             pins.digitalWritePin(this.pin, 0);
             // don't yield to avoid races on initialization
@@ -510,7 +510,7 @@ namespace neopixel {
         strip._mode = mode;
         strip._matrixWidth = 0;
         strip.setBrightness(255)
-        strip.setPin(DigitalPin.P16)
+        strip.setPin(P16)
         return strip;
     }
 
