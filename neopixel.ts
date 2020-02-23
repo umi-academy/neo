@@ -496,12 +496,12 @@ namespace neopixel {
      * @param pin the pin where the neopixel is connected.
      * @param numleds number of leds in the strip, eg: 24,30,60,64
      */
-    //% blockId="neopixel_create" block="All 8 RGB LED"
+    //% blockId="neopixel_create" block="ALL 8 RGB LED"
     //% weight=90 blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    export function create(): Strip {
+    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
         numleds = 8;
         mode = NeoPixelMode.RGB;
