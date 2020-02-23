@@ -43,7 +43,7 @@ enum NeoPixelMode {
 namespace neopixel {
 
     export enum NeoPixelPin {
-        RGB = 0
+        RGB = DigitalPin.P16
     }
 
     //% shim=sendBufferAsm
