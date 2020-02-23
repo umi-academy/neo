@@ -43,8 +43,7 @@ enum NeoPixelMode {
 namespace neopixel {
 
     export enum NeoPixelPin {
-        //% block="RGB LED"
-        RGB = 0,
+        RGB = 0
     }
 
     //% shim=sendBufferAsm
