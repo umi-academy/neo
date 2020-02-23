@@ -500,11 +500,10 @@ namespace neopixel {
     //% weight=90 blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
-    //% numleds.min=8 numleds.max=8
     //% blockSetVariable=strip
     export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
-        numleds = 8;
+        numleds = 7;
         let strip = new Strip();
         let stride = mode === NeoPixelMode.RGBW ? 4 : 3;
         strip.buf = pins.createBuffer(numleds * stride);
