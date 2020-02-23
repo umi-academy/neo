@@ -501,7 +501,7 @@ namespace neopixel {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    export function create(): Strip {
+    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
         numleds = 8;
         mode = NeoPixelMode.RGB;
