@@ -65,7 +65,7 @@ namespace UMI_RGB {
          * Shows all LEDs to a given color (range 0-255 for r, g, b). 
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors" 
+        //% blockId="neopixel_set_strip_color" block="%RGB_LED|show color %rgb=neopixel_colors" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
         showColor(rgb: number) {
@@ -79,7 +79,7 @@ namespace UMI_RGB {
          * @param startHue the start hue value for the rainbow, eg: 1
          * @param endHue the end hue value for the rainbow, eg: 360
          */
-        //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue" 
+        //% blockId="neopixel_set_strip_rainbow" block="%RGB_LED|show rainbow from %startHue|to %endHue" 
         //% weight=85 blockGap=8
         //% parts="neopixel"
         showRainbow(startHue: number = 1, endHue: number = 360) {
@@ -146,7 +146,7 @@ namespace UMI_RGB {
          * @param high maximum value, eg: 255
          */
         //% weight=84
-        //% blockId=neopixel_show_bar_graph block="%strip|show bar graph of %value|up to %high" 
+        //% blockId=neopixel_show_bar_graph block="%RGB_LED|show bar graph of %value|up to %high" 
         //% icon="\uf080"
         //% parts="neopixel"
         showBarGraph(value: number, high: number): void {
@@ -183,7 +183,7 @@ namespace UMI_RGB {
          * @param pixeloffset position of the NeoPixel in the strip
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
+        //% blockId="neopixel_set_pixel_color" block="%RGB_LED|set pixel color at %pixeloffset|to %rgb=neopixel_colors" 
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=true
@@ -197,7 +197,7 @@ namespace UMI_RGB {
 	     * @param rotation type of matrix
 	     * @param chain type of matrix
          */
-        //% blockId=neopixel_set_matrix_width block="%strip|set matrix width %width|rotation %rotation|chain %chain"
+        //% blockId=neopixel_set_matrix_width block="%RGB_LED|set matrix width %width|rotation %rotation|chain %chain"
         //% blockGap=8
         //% weight=5
         //% parts="neopixel" advanced=true
@@ -214,7 +214,7 @@ namespace UMI_RGB {
          * @param y horizontal position
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
+        //% blockId="neopixel_set_matrix_color" block="%RGB_LED|set matrix color at x %x|y %y|to %rgb=neopixel_colors" 
         //% weight=4
         //% parts="neopixel" advanced=true
         setMatrixColor(x: number, y: number, rgb: number) {
@@ -248,7 +248,7 @@ namespace UMI_RGB {
          * @param pixeloffset position of the LED in the strip
          * @param white brightness of the white LED
          */
-        //% blockId="neopixel_set_pixel_white" block="%strip|set pixel white LED at %pixeloffset|to %white" 
+        //% blockId="neopixel_set_pixel_white" block="%RGB_LED|set pixel white LED at %pixeloffset|to %white" 
         //% blockGap=8
         //% weight=80
         //% parts="neopixel" advanced=true
@@ -262,7 +262,7 @@ namespace UMI_RGB {
         /**
          * Send all the changes to the strip.
          */
-        //% blockId="neopixel_show" block="%strip|show" blockGap=8
+        //% blockId="neopixel_show" block="%RGB_LED|show" blockGap=8
         //% weight=79
         //% parts="neopixel"
         show() {
@@ -273,7 +273,7 @@ namespace UMI_RGB {
          * Turn off all LEDs.
          * You need to call ``show`` to make the changes visible.
          */
-        //% blockId="neopixel_clear" block="%strip|clear"
+        //% blockId="neopixel_clear" block="%RGB_LED|clear"
         //% weight=76
         //% parts="neopixel"
         clear(): void {
@@ -284,7 +284,7 @@ namespace UMI_RGB {
         /**
          * Gets the number of pixels declared on the strip
          */
-        //% blockId="neopixel_length" block="%strip|length" blockGap=8
+        //% blockId="neopixel_length" block="%RGB_LED|length" blockGap=8
         //% weight=60 advanced=true
         length() {
             return this._length;
@@ -294,7 +294,7 @@ namespace UMI_RGB {
          * Set the brightness of the strip. This flag only applies to future operation.
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
-        //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness" blockGap=8
+        //% blockId="neopixel_set_brightness" block="%RGB_LED|set brightness %brightness" blockGap=8
         //% weight=59
         //% parts="neopixel" advanced=true
         setBrightness(brightness: number): void {
@@ -304,7 +304,7 @@ namespace UMI_RGB {
         /**
          * Apply brightness to current colors using a quadratic easing function.
          **/
-        //% blockId="neopixel_each_brightness" block="%strip|ease brightness" blockGap=8
+        //% blockId="neopixel_each_brightness" block="%RGB_LED|ease brightness" blockGap=8
         //% weight=58
         //% parts="neopixel" advanced=true
         easeBrightness(): void {
@@ -335,7 +335,7 @@ namespace UMI_RGB {
          * @param length number of LEDs in the range. eg: 4
          */
         //% weight=89
-        //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
+        //% blockId="neopixel_range" block="%RGB_LED|range from %start|with %length|leds"
         //% parts="neopixel"
         //% blockSetVariable=range
         range(start: number, length: number): Strip {
@@ -357,7 +357,7 @@ namespace UMI_RGB {
          * You need to call ``show`` to make the changes visible.
          * @param offset number of pixels to shift forward, eg: 1
          */
-        //% blockId="neopixel_shift" block="%strip|shift pixels by %offset" blockGap=8
+        //% blockId="neopixel_shift" block="%RGB_LED|shift pixels by %offset" blockGap=8
         //% weight=40
         //% parts="neopixel"
         shift(offset: number = 1): void {
@@ -371,7 +371,7 @@ namespace UMI_RGB {
          * You need to call ``show`` to make the changes visible.
          * @param offset number of pixels to rotate forward, eg: 1
          */
-        //% blockId="neopixel_rotate" block="%strip|rotate pixels by %offset" blockGap=8
+        //% blockId="neopixel_rotate" block="%RGB_LED|rotate pixels by %offset" blockGap=8
         //% weight=39
         //% parts="neopixel"
         rotate(offset: number = 1): void {
@@ -394,7 +394,7 @@ namespace UMI_RGB {
         /**
          * Estimates the electrical current (mA) consumed by the current light configuration.
          */
-        //% weight=9 blockId=neopixel_power block="%strip|power (mA)"
+        //% weight=9 blockId=neopixel_power block="%RGB_LED|power (mA)"
         //% advanced=true
         power(): number {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
