@@ -510,7 +510,7 @@ namespace neopixel {
         strip._mode = mode;
         strip._matrixWidth = 0;
         strip.setBrightness(255)
-        strip.setPin(P16)
+        strip.setPin(16)
         return strip;
     }
 
