@@ -42,10 +42,6 @@ enum NeoPixelMode {
 //% weight=5 color=#2699BF icon="\uf110"
 namespace neopixel {
 
-    export enum NeoPixelPin {
-        RGB = DigitalPin.P16
-    }
-
     //% shim=sendBufferAsm
     function sendBuffer(buf: Buffer, pin: DigitalPin) {
     }
@@ -506,7 +502,7 @@ namespace neopixel {
     //% parts="neopixel"
     //% trackArgs=0,2
     //% blockSetVariable=strip
-    export function create(pin: NeoPixelPin, numleds: number, mode: NeoPixelMode): Strip {
+    export function create(pin: DigitalPin, numleds: number, mode: NeoPixelMode): Strip {
         pin = DigitalPin.P16;
         numleds = 8;
         let strip = new Strip();
