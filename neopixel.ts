@@ -508,11 +508,11 @@ namespace UMI_RGB {
         return strip;
     }
 
-    //% blockId="neopixel_create" block="ALL RGB LED"
+    //% blockId="neopixel_create" block="ALL 8 RGB LED"
     //% weight=90 blockGap=8
     //% parts="neopixel"
     //% trackArgs=0,2
-    //% blockSetVariable=strip
+    //% blockSetVariable=RGB_LED
     export function RGBcreate(): Strip {
         strip = create(DigitalPin.P16, 8, 0);
         return strip;
