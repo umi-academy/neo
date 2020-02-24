@@ -36,7 +36,7 @@ enum NeoPixelMode {
     RGB_RGB = 2
 }
 
-let RGB_LED: UMI_RGB.Strip;
+let RGB: UMI_RGB.Strip;
 
 /**
  * Functions to operate NeoPixel strips.
