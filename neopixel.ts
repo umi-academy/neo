@@ -516,8 +516,8 @@ namespace UMI_RGB {
     //% trackArgs=0,2
     //% blockSetVariable=RGB_LED
     export function RGBcreate(): UMI_RGB.Strip {
-        let RGB_LED = create(DigitalPin.P16, 8, 0);
-        return RGB_LED;
+        RGB = create(DigitalPin.P16, 8, 0);
+        return RGB;
     }
 
     /**
