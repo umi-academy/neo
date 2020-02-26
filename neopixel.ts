@@ -67,8 +67,8 @@ namespace UMI_RGB {
          * Shows all LEDs to a given color (range 0-255 for r, g, b). 
          * @param rgb RGB color of the LED
          */
-        //% blockId="neopixel_set_strip_color" block="%RGB_LED|show color %rgb=$color"
-        //% color.shadow="colorWheelPicker" 
+        //% blockId="neopixel_set_strip_color" block="%RGB_LED|show color $rgb=neopixel_colors" 
+        //% color.shadow="colorWheelPicker"
         //% weight=85 blockGap=8
         //% parts="neopixel"
         showColor(rgb: number) {
