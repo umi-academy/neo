@@ -76,6 +76,16 @@ namespace UMI_RGB {
             this.show();
         }
 
+        //% blockId="neopixel_set_color"
+        //% block="%RGB_LED|show color $color=neopixel_colors"
+        //% color.shadow="colorWheelPicker"
+        //% parts="neopixel"
+        export function showColorWheel(color: number) {
+            color = color >> 0;
+            this.setAllRGB(color);
+            this.show();
+        }
+
         /**
          * Shows a rainbow pattern on all LEDs. 
          * @param startHue the start hue value for the rainbow, eg: 1
