@@ -77,7 +77,7 @@ namespace UMI_RGB {
         }
 
         //% blockId="neopixel_set_color" block="%RGB_LED|show wheel $color"
-        //% color.shadow="colorWheelHsvPicker"
+        //% color.shadow="colorNumberPicker"
         showColorWheel(color: number) {
             color = color >> 0;
             this.setAllRGB(color);
